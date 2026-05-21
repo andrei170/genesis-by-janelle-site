@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Genesis by Janelle | Aesthetic Nurse Specialist | De Pere, WI</title>
+  <meta property="og:title" content="Genesis by Janelle | Aesthetic Nurse Specialist | De Pere, WI">
+  <meta property="og:description" content="Genesis by Janelle offers expert aesthetic nursing in De Pere, WI. Botox, Dysport, Juvederm, Sculptra, Kybella and more with CPSN and CANS certified nurse Janelle.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andrei170.github.io/genesis-by-janelle-site/">
+  <meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/474d8606-198e-4997-ac2a-aac80b017478/3F4A0301-2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/474d8606-198e-4997-ac2a-aac80b017478/3F4A0301-2.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230f172a'/><text x='32' y='44' font-size='38' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'>G</text></svg>">
+
 <meta name="description" content="Genesis by Janelle offers expert aesthetic nursing in De Pere, WI. Botox, Dysport, Juvederm, Sculptra, Kybella and more with CPSN and CANS certified nurse Janelle.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,11 +61,10 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
-  .serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-  }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
 
   .container {
     max-width: 1180px;
@@ -72,10 +80,7 @@
       transition: opacity 0.72s cubic-bezier(0.22,1,0.36,1),
                   transform 0.72s cubic-bezier(0.22,1,0.36,1);
     }
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -84,17 +89,20 @@
 
   /* ===== HEADER ===== */
   .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
-    background: rgba(250,247,242,0.94);
-    backdrop-filter: saturate(180%) blur(12px);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
-    border-bottom: 1px solid var(--line);
-    transition: padding 0.3s ease, box-shadow 0.3s ease;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: transparent;
+    transition: background 0.4s ease, padding 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .site-header.condensed {
+  .site-header.opaque {
+    background: rgba(250,247,242,0.96);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow-sm);
   }
 
@@ -102,13 +110,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 24px 0;
     transition: padding 0.3s ease;
   }
 
-  .site-header.condensed .header-inner {
-    padding: 12px 0;
-  }
+  .site-header.opaque .header-inner { padding: 14px 0; }
 
   .logo {
     display: flex;
@@ -128,27 +134,31 @@
     transition: transform 0.3s ease;
   }
 
-  .site-header.condensed .logo-mark {
-    transform: scale(0.88);
-  }
+  .site-header.opaque .logo-mark { transform: scale(0.88); }
 
   .logo-text-main {
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: var(--ink-1);
+    color: var(--white);
     line-height: 1.1;
+    transition: color 0.4s ease;
   }
+
+  .site-header.opaque .logo-text-main { color: var(--ink-1); }
 
   .logo-text-sub {
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ink-4);
+    color: rgba(255,255,255,0.72);
     font-weight: 500;
     margin-top: 2px;
+    transition: color 0.4s ease;
   }
+
+  .site-header.opaque .logo-text-sub { color: var(--ink-4); }
 
   .primary-nav ul {
     display: flex;
@@ -161,26 +171,37 @@
     font-size: 13.5px;
     font-weight: 500;
     letter-spacing: 0.06em;
-    color: var(--ink-3);
+    color: rgba(255,255,255,0.88);
     transition: color 0.18s ease;
   }
 
-  .primary-nav a:hover { color: var(--rose-dark); }
+  .site-header.opaque .primary-nav a { color: var(--ink-3); }
+
+  .primary-nav a:hover { color: var(--gold-light) !important; }
+  .site-header.opaque .primary-nav a:hover { color: var(--rose-dark) !important; }
 
   .nav-cta {
     display: inline-block;
     padding: 10px 22px;
-    background: var(--ink-1);
-    color: var(--ivory) !important;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: var(--white) !important;
     border-radius: 3px;
     font-size: 12.5px !important;
     letter-spacing: 0.12em !important;
     text-transform: uppercase;
     font-weight: 600 !important;
-    transition: background 0.2s ease !important;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.4s ease !important;
+    backdrop-filter: blur(4px);
   }
 
-  .nav-cta:hover { background: var(--rose-dark) !important; color: var(--ivory) !important; }
+  .site-header.opaque .nav-cta {
+    background: var(--ink-1);
+    border-color: var(--ink-1);
+    color: var(--ivory) !important;
+  }
+
+  .nav-cta:hover { background: var(--rose-dark) !important; border-color: var(--rose-dark) !important; color: var(--ivory) !important; }
 
   @media (max-width: 800px) {
     .primary-nav .hide-mobile { display: none; }
@@ -193,38 +214,79 @@
     .nav-cta { padding: 8px 14px; }
   }
 
-  /* ===== HERO ===== */
+  /* ===== CINEMATIC HERO (100vh full-viewport) ===== */
   .hero {
     position: relative;
-    min-height: 100svh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    min-height: 600px;
     overflow: hidden;
+    display: flex;
+    align-items: flex-end;
   }
 
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 64px 80px 0;
+  /* Ken-Burns zoom layer (motion-safe only) */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-bg img {
+      animation: kenBurns 18s ease-in-out infinite alternate;
+      transform-origin: center center;
+    }
+  }
+
+  @keyframes kenBurns {
+    0%   { transform: scale(1.00) translate(0, 0); }
+    100% { transform: scale(1.07) translate(-1%, 1%); }
+  }
+
+  /* Layered scrim: dark vignette at bottom + subtle top fade */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(ellipse at 0% 0%, var(--blush) 0%, transparent 55%),
-      radial-gradient(ellipse at 100% 100%, var(--gold-light) 0%, transparent 50%),
-      var(--ivory);
+      linear-gradient(to top,
+        rgba(20,10,8,0.78) 0%,
+        rgba(20,10,8,0.42) 28%,
+        rgba(20,10,8,0.12) 55%,
+        transparent 80%
+      ),
+      linear-gradient(to bottom,
+        rgba(20,10,8,0.32) 0%,
+        transparent 22%
+      );
+    pointer-events: none;
+  }
+
+  .hero-content {
     position: relative;
     z-index: 2;
+    width: 100%;
+    padding-bottom: clamp(52px, 8vh, 96px);
   }
+
+  .hero-content .container { max-width: 1180px; }
 
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     font-size: 11px;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--rose-dark);
+    color: var(--gold-light);
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .hero-eyebrow::before {
@@ -232,30 +294,31 @@
     display: block;
     width: 28px;
     height: 1px;
-    background: var(--rose-dark);
+    background: var(--gold);
   }
 
   .hero-h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 5.5vw, 72px);
+    font-size: clamp(44px, 6.5vw, 88px);
     font-weight: 400;
-    line-height: 1.06;
-    color: var(--ink-1);
-    margin-bottom: 28px;
+    line-height: 1.04;
+    color: var(--white);
+    margin-bottom: 26px;
     letter-spacing: -0.01em;
+    max-width: 780px;
   }
 
   .hero-h1 em {
     font-style: italic;
-    color: var(--rose);
+    color: var(--blush-mid);
   }
 
   .hero-body {
     font-size: 16px;
-    color: var(--ink-3);
+    color: rgba(250,247,242,0.82);
     line-height: 1.8;
-    max-width: 440px;
-    margin-bottom: 44px;
+    max-width: 480px;
+    margin-bottom: 40px;
   }
 
   .hero-actions {
@@ -268,36 +331,33 @@
   .btn-primary {
     display: inline-block;
     padding: 16px 36px;
-    background: var(--ink-1);
+    background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 100%);
     color: var(--ivory);
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 600;
     border-radius: 3px;
-    transition: background 0.22s ease, transform 0.22s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease;
   }
 
-  .btn-primary:hover {
-    background: var(--rose-dark);
-    transform: translateY(-1px);
-  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
 
   .btn-ghost {
     font-size: 13px;
     font-weight: 500;
-    color: var(--ink-3);
-    border-bottom: 1px solid var(--line);
+    color: rgba(250,247,242,0.78);
+    border-bottom: 1px solid rgba(250,247,242,0.35);
     padding-bottom: 2px;
     transition: color 0.18s ease, border-color 0.18s ease;
   }
 
-  .btn-ghost:hover { color: var(--rose-dark); border-color: var(--rose-dark); }
+  .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold); }
 
   .hero-badges {
     display: flex;
-    gap: 14px;
-    margin-top: 48px;
+    gap: 12px;
+    margin-top: 44px;
     flex-wrap: wrap;
   }
 
@@ -305,15 +365,15 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 14px;
-    background: var(--white);
-    border: 1px solid var(--line);
+    padding: 7px 14px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 500;
-    color: var(--ink-2);
-    letter-spacing: 0.02em;
-    box-shadow: var(--shadow-xs);
+    color: rgba(250,247,242,0.9);
+    letter-spacing: 0.04em;
+    backdrop-filter: blur(8px);
   }
 
   .badge-dot {
@@ -324,43 +384,26 @@
     flex-shrink: 0;
   }
 
-  .hero-right {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, var(--ivory) 0%, transparent 15%);
-    pointer-events: none;
-  }
-
+  /* Stat pill sits inside hero at bottom-right on desktop */
   .hero-stat-pill {
     position: absolute;
-    bottom: 48px;
-    left: 32px;
-    background: rgba(250,247,242,0.94);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--line);
+    bottom: clamp(52px, 8vh, 96px);
+    right: 28px;
+    background: rgba(250,247,242,0.10);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.22);
     border-radius: 12px;
     padding: 18px 22px;
-    box-shadow: var(--shadow-md);
+    z-index: 3;
+    text-align: center;
   }
 
   .hero-stat-pill .stat-n {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 500;
-    color: var(--ink-1);
+    color: var(--white);
     line-height: 1;
   }
 
@@ -368,29 +411,14 @@
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-4);
+    color: rgba(250,247,242,0.72);
     font-weight: 500;
-    margin-top: 4px;
+    margin-top: 5px;
   }
 
-  @media (max-width: 900px) {
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-    .hero-left {
-      padding: 72px 0 56px;
-      order: 2;
-    }
-    .hero-right {
-      order: 1;
-      height: 58vw;
-      max-height: 480px;
-    }
-    .hero-overlay {
-      background: linear-gradient(to bottom, transparent 70%, var(--ivory) 100%);
-    }
-    .hero-stat-pill { bottom: 20px; left: 20px; }
+  @media (max-width: 760px) {
+    .hero-stat-pill { display: none; }
+    .hero-h1 { font-size: clamp(38px, 9vw, 56px); }
   }
 
   /* ===== TRUST STRIP ===== */
@@ -411,20 +439,11 @@
     text-align: center;
   }
 
-  .trust-div {
-    color: var(--gold);
-    font-size: 10px;
-  }
+  .trust-div { color: var(--gold); font-size: 10px; }
 
   /* ===== SECTION SKELETON ===== */
-  .section {
-    padding: 100px 0;
-  }
-
-  .section.alt {
-    background: var(--ivory-mid);
-  }
-
+  .section { padding: 100px 0; }
+  .section.alt { background: var(--ivory-mid); }
   .section.rose-tint {
     background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 40%, var(--ivory-mid) 100%);
   }
@@ -478,13 +497,8 @@
     gap: 24px;
   }
 
-  @media (max-width: 960px) {
-    .service-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 600px) {
-    .service-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 960px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .service-grid { grid-template-columns: 1fr; } }
 
   .service-card {
     background: var(--white);
@@ -516,14 +530,10 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .service-card:hover .service-img-wrap img {
-      transform: scale(1.04);
-    }
+    .service-card:hover .service-img-wrap img { transform: scale(1.04); }
   }
 
-  .service-body {
-    padding: 26px 24px 28px;
-  }
+  .service-body { padding: 26px 24px 28px; }
 
   .service-name {
     font-family: 'Cormorant Garamond', serif;
@@ -548,6 +558,99 @@
     letter-spacing: 0.04em;
   }
 
+  /* ===== FULL-BLEED FEATURE BAND (~65vh) ===== */
+  .feature-band {
+    position: relative;
+    width: 100%;
+    height: clamp(420px, 65vh, 780px);
+    overflow: hidden;
+  }
+
+  .feature-band-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .feature-band-img {
+      animation: kenBurnsSlow 22s ease-in-out infinite alternate;
+      transform-origin: 55% 30%;
+    }
+  }
+
+  @keyframes kenBurnsSlow {
+    0%   { transform: scale(1.00); }
+    100% { transform: scale(1.055); }
+  }
+
+  .feature-band-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right,
+        rgba(20,10,8,0.64) 0%,
+        rgba(20,10,8,0.30) 45%,
+        rgba(20,10,8,0.08) 100%
+      ),
+      linear-gradient(to top,
+        rgba(20,10,8,0.50) 0%,
+        transparent 40%
+      );
+    pointer-events: none;
+  }
+
+  .feature-band-body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(28px, 5vw, 72px);
+    max-width: 680px;
+  }
+
+  .feature-band-label {
+    font-size: 10.5px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feature-band-label::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .feature-band-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4.2vw, 58px);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-band-caption {
+    font-size: 15px;
+    color: rgba(250,247,242,0.80);
+    line-height: 1.75;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
   /* ===== FOUNDER ===== */
   .founder-grid {
     display: grid;
@@ -557,15 +660,10 @@
   }
 
   @media (max-width: 1000px) {
-    .founder-grid {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
+    .founder-grid { grid-template-columns: 1fr; gap: 48px; }
   }
 
-  .founder-img-wrap {
-    position: relative;
-  }
+  .founder-img-wrap { position: relative; }
 
   .founder-img-main {
     border-radius: 20px;
@@ -601,11 +699,7 @@
   }
 
   @media (max-width: 600px) {
-    .founder-img-secondary {
-      width: 140px;
-      bottom: -18px;
-      right: -12px;
-    }
+    .founder-img-secondary { width: 140px; bottom: -18px; right: -12px; }
   }
 
   .founder-body p {
@@ -641,7 +735,7 @@
 
   .cred-pill svg { flex-shrink: 0; }
 
-  /* ===== BEFORE/AFTER GALLERY ===== */
+  /* ===== GALLERY (enlarged + lightbox hover) ===== */
   .gallery-intro {
     display: flex;
     align-items: flex-end;
@@ -654,23 +748,20 @@
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 12px;
   }
 
-  @media (max-width: 900px) {
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 500px) {
-    .gallery-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .gallery-grid { grid-template-columns: 1fr; } }
 
   .gallery-item {
     border-radius: 14px;
     overflow: hidden;
-    aspect-ratio: 3/4;
+    /* Taller tiles: was 3/4, now 2/3 gives more height on wide screens */
+    aspect-ratio: 2/3;
     position: relative;
     box-shadow: var(--shadow-sm);
+    cursor: zoom-in;
   }
 
   .gallery-item img {
@@ -678,11 +769,26 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .gallery-item:hover img { transform: scale(1.04); }
+  /* Lightbox-style hover: image zooms + dark overlay reveals caption */
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20,10,8,0);
+    transition: background 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .gallery-item-overlay-icon {
+    opacity: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: scale(0.72);
+    color: var(--white);
   }
 
   .gallery-item-label {
@@ -690,13 +796,31 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(38,24,20,0.7) 0%, transparent 100%);
-    padding: 28px 16px 14px;
+    background: linear-gradient(to top, rgba(38,24,20,0.78) 0%, transparent 100%);
+    padding: 36px 18px 16px;
     font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.9);
     font-weight: 500;
+    transform: translateY(4px);
+    transition: transform 0.35s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+    .gallery-item:hover .gallery-item-overlay {
+      background: rgba(20,10,8,0.30);
+    }
+    .gallery-item:hover .gallery-item-overlay-icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .gallery-item:hover .gallery-item-label {
+      transform: translateY(0);
+    }
   }
 
   .disclaimer-note {
@@ -706,6 +830,71 @@
     line-height: 1.7;
   }
 
+  /* ===== LIGHTBOX MODAL ===== */
+  .lb-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(10,5,3,0.93);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+
+  .lb-backdrop.active { display: flex; }
+
+  .lb-img-wrap {
+    max-width: 90vw;
+    max-height: 88vh;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  }
+
+  .lb-img-wrap img {
+    display: block;
+    max-width: 90vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .lb-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px 16px;
+    background: linear-gradient(to top, rgba(10,5,3,0.7) 0%, transparent 100%);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+
+  .lb-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    color: rgba(255,255,255,0.8);
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 501;
+    transition: color 0.18s ease;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .lb-close:hover { color: var(--gold-light); }
+
   /* ===== SOCIAL PROOF ===== */
   .proof-grid {
     display: grid;
@@ -713,9 +902,7 @@
     gap: 24px;
   }
 
-  @media (max-width: 840px) {
-    .proof-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 840px) { .proof-grid { grid-template-columns: 1fr; } }
 
   .proof-card {
     background: var(--white);
@@ -765,11 +952,7 @@
     background: var(--blush-deep);
   }
 
-  .star-row {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 16px;
-  }
+  .star-row { display: flex; gap: 3px; margin-bottom: 16px; }
 
   .proof-card::before {
     content: "";
@@ -788,22 +971,11 @@
     align-items: start;
   }
 
-  @media (max-width: 900px) {
-    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
 
-  .nap-block {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 8px;
-  }
+  .nap-block { display: flex; flex-direction: column; gap: 24px; margin-top: 8px; }
 
-  .nap-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
+  .nap-item { display: flex; align-items: flex-start; gap: 16px; }
 
   .nap-icon {
     width: 44px;
@@ -824,17 +996,8 @@
     margin-bottom: 4px;
   }
 
-  .nap-value {
-    font-size: 15px;
-    color: var(--ink-2);
-    line-height: 1.6;
-  }
-
-  .nap-value a {
-    color: var(--rose-dark);
-    font-weight: 500;
-  }
-
+  .nap-value { font-size: 15px; color: var(--ink-2); line-height: 1.6; }
+  .nap-value a { color: var(--rose-dark); font-weight: 500; }
   .nap-value a:hover { text-decoration: underline; }
 
   .booking-card {
@@ -887,11 +1050,7 @@
 
   .btn-booking:hover { opacity: 0.88; transform: translateY(-2px); }
 
-  .booking-card .bc-note {
-    margin-top: 18px;
-    font-size: 12px;
-    color: rgba(250,247,242,0.45);
-  }
+  .booking-card .bc-note { margin-top: 18px; font-size: 12px; color: rgba(250,247,242,0.45); }
 
   /* ===== FOOTER ===== */
   .site-footer {
@@ -907,9 +1066,7 @@
     margin-bottom: 48px;
   }
 
-  @media (max-width: 760px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
+  @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
 
   .footer-brand .fb-name {
     font-family: 'Cormorant Garamond', serif;
@@ -919,17 +1076,9 @@
     margin-bottom: 14px;
   }
 
-  .footer-brand p {
-    font-size: 13.5px;
-    color: rgba(250,247,242,0.65);
-    line-height: 1.8;
-  }
+  .footer-brand p { font-size: 13.5px; color: rgba(250,247,242,0.65); line-height: 1.8; }
 
-  .footer-social {
-    display: flex;
-    gap: 14px;
-    margin-top: 20px;
-  }
+  .footer-social { display: flex; gap: 14px; margin-top: 20px; }
 
   .social-link {
     width: 38px;
@@ -941,10 +1090,7 @@
     transition: border-color 0.18s ease, background 0.18s ease;
   }
 
-  .social-link:hover {
-    border-color: var(--gold);
-    background: rgba(201,164,88,0.12);
-  }
+  .social-link:hover { border-color: var(--gold); background: rgba(201,164,88,0.12); }
 
   .footer-col h5 {
     font-size: 11px;
@@ -955,19 +1101,9 @@
     margin-bottom: 18px;
   }
 
-  .footer-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 
-  .footer-col a {
-    font-size: 13.5px;
-    color: rgba(250,247,242,0.65);
-    transition: color 0.18s ease;
-  }
-
+  .footer-col a { font-size: 13.5px; color: rgba(250,247,242,0.65); transition: color 0.18s ease; }
   .footer-col a:hover { color: var(--ivory); }
 
   .footer-bottom {
@@ -982,11 +1118,7 @@
     color: rgba(250,247,242,0.38);
   }
 
-  .footer-bottom a {
-    color: rgba(250,247,242,0.55);
-    transition: color 0.18s ease;
-  }
-
+  .footer-bottom a { color: rgba(250,247,242,0.55); transition: color 0.18s ease; }
   .footer-bottom a:hover { color: var(--gold-light); }
 
   /* ===== UTILS ===== */
@@ -998,7 +1130,7 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- ===== HEADER (transparent over hero, opaque on scroll) ===== -->
 <header class="site-header" id="site-header">
   <div class="container">
     <div class="header-inner">
@@ -1026,15 +1158,25 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ===== CINEMATIC HERO (100vh) ===== -->
 <section class="hero" aria-label="Introduction">
-  <div class="hero-left container" style="padding-right: 0;">
-    <div style="max-width: 520px;">
+  <div class="hero-bg" aria-hidden="true">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/474d8606-198e-4997-ac2a-aac80b017478/3F4A0301-2.jpg"
+      alt=""
+      width="1800" height="2400"
+      fetchpriority="high"
+    >
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="container">
       <div class="hero-eyebrow reveal">CPSN &amp; CANS Certified Aesthetic Nurse</div>
       <h1 class="hero-h1 reveal reveal-delay-1">
         Your results<br>
         <em>in the hands</em><br>
-        of a nurse who<br>has done this for<br>19 years.
+        of a nurse who has<br>done this for 19 years.
       </h1>
       <p class="hero-body reveal reveal-delay-2">
         Every treatment at Genesis by Janelle is performed by Janelle herself, an Allergan-trained aesthetic nurse with dual board certifications and two decades of experience serving De Pere, Green Bay, and Greenville.
@@ -1050,17 +1192,10 @@
       </div>
     </div>
   </div>
-  <div class="hero-right">
-    <img
-      src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/474d8606-198e-4997-ac2a-aac80b017478/3F4A0301-2.jpg"
-      alt="Janelle, aesthetic nurse specialist, at Genesis by Janelle clinic in De Pere, WI"
-      width="900" height="1200"
-    >
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-stat-pill">
-      <div class="stat-n">19+</div>
-      <div class="stat-l">Years in aesthetic nursing</div>
-    </div>
+
+  <div class="hero-stat-pill" aria-label="19 plus years in aesthetic nursing">
+    <div class="stat-n">19+</div>
+    <div class="stat-l">Years in aesthetic nursing</div>
   </div>
 </section>
 
@@ -1200,6 +1335,29 @@
   </div>
 </section>
 
+<!-- ===== FULL-BLEED FEATURE BAND (Janelle at work) ===== -->
+<div class="feature-band" aria-label="Janelle performing a treatment">
+  <img
+    class="feature-band-img"
+    src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/d346425a-f049-4fbe-8867-f0401c1702aa/3F4A9482-2.jpg"
+    alt="Janelle, founder and lead aesthetic nurse, preparing a treatment at Genesis by Janelle in De Pere WI"
+    loading="lazy" width="2400" height="1600"
+  >
+  <div class="feature-band-scrim" aria-hidden="true"></div>
+  <div class="feature-band-body">
+    <div class="feature-band-label reveal">The Standard</div>
+    <h2 class="feature-band-title reveal reveal-delay-1">
+      One nurse.<br>Your face. Every visit.
+    </h2>
+    <p class="feature-band-caption reveal reveal-delay-2">
+      Most practices rotate providers. At Genesis by Janelle, Janelle is the only injector. She has treated thousands of patients since 2005 and still does every consultation herself. That is the level of continuity her patients return for.
+    </p>
+    <a href="https://fltvy.myaestheticrecord.com/online-booking" class="btn-primary reveal reveal-delay-3" target="_blank" rel="noopener" style="display:inline-block;">
+      Book a Consultation
+    </a>
+  </div>
+</div>
+
 <!-- ===== FOUNDER ===== -->
 <section id="about" class="section alt" aria-labelledby="about-heading">
   <div class="container">
@@ -1207,7 +1365,7 @@
       <div class="founder-img-wrap reveal">
         <div class="founder-img-main">
           <img
-            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/d346425a-f049-4fbe-8867-f0401c1702aa/3F4A9482-2.jpg"
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/9b55aa83-5765-4343-8fef-933503489535/3F4A9296.jpg"
             alt="Janelle, founder and lead aesthetic nurse at Genesis by Janelle"
             loading="lazy" width="960" height="1200"
           >
@@ -1272,7 +1430,7 @@
   </div>
 </section>
 
-<!-- ===== GALLERY ===== -->
+<!-- ===== GALLERY (enlarged tiles + lightbox hover) ===== -->
 <section class="section rose-tint" aria-labelledby="gallery-heading">
   <div class="container">
     <div class="gallery-intro">
@@ -1280,46 +1438,78 @@
         <div class="section-label reveal">Work</div>
         <h2 class="section-title reveal reveal-delay-1" id="gallery-heading">A look inside<br>the practice.</h2>
       </div>
-      <p style="font-size:14px; color:var(--ink-4); max-width:280px; text-align:right;" class="reveal">Photos from Genesis by Janelle's clinical suite and team.</p>
+      <p style="font-size:14px; color:var(--ink-4); max-width:280px; text-align:right;" class="reveal">Photos from Genesis by Janelle's clinical suite and team. Click any image to enlarge.</p>
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item reveal">
+      <div class="gallery-item reveal" data-caption="The Suite" tabindex="0" role="button" aria-label="Open photo: The Suite">
         <img
           src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/5052d98c-8a8f-4513-b48d-8497e0bf4721/3F4A9346.jpg"
           alt="Genesis by Janelle aesthetic clinic interior"
-          loading="lazy" width="600" height="800"
+          loading="lazy" width="600" height="900"
         >
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="gallery-item-overlay-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+          </div>
+        </div>
         <div class="gallery-item-label">The Suite</div>
       </div>
-      <div class="gallery-item reveal reveal-delay-1">
+
+      <div class="gallery-item reveal reveal-delay-1" data-caption="The Team" tabindex="0" role="button" aria-label="Open photo: The Team">
         <img
           src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/9b55aa83-5765-4343-8fef-933503489535/3F4A9296.jpg"
           alt="Janelle and her team at Genesis by Janelle"
-          loading="lazy" width="600" height="800"
+          loading="lazy" width="600" height="900"
         >
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="gallery-item-overlay-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+          </div>
+        </div>
         <div class="gallery-item-label">The Team</div>
       </div>
-      <div class="gallery-item reveal reveal-delay-2">
+
+      <div class="gallery-item reveal reveal-delay-2" data-caption="Consultation" tabindex="0" role="button" aria-label="Open photo: Consultation">
         <img
           src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/2ae9f6fa-8569-47f8-8efc-0d18ba5025c6/3F4A9314.jpg"
           alt="Treatment consultation at Genesis by Janelle"
-          loading="lazy" width="600" height="800"
+          loading="lazy" width="600" height="900"
         >
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="gallery-item-overlay-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+          </div>
+        </div>
         <div class="gallery-item-label">Consultation</div>
       </div>
-      <div class="gallery-item reveal reveal-delay-3">
+
+      <div class="gallery-item reveal reveal-delay-3" data-caption="Precision" tabindex="0" role="button" aria-label="Open photo: Precision">
         <img
           src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/e945d7d9-a477-4169-b17b-a15803c9253c/3F4A9558.JPG"
           alt="Janelle at work during an aesthetic treatment"
-          loading="lazy" width="600" height="800"
+          loading="lazy" width="600" height="900"
         >
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="gallery-item-overlay-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+          </div>
+        </div>
         <div class="gallery-item-label">Precision</div>
       </div>
     </div>
     <p class="disclaimer-note">Individual treatment results vary. Outcomes depend on individual anatomy, treatment type, and provider technique. Photos are for illustrative purposes only and do not constitute a guarantee of results.</p>
   </div>
 </section>
+
+<!-- ===== LIGHTBOX MODAL ===== -->
+<div class="lb-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+  <button class="lb-close" id="lb-close" aria-label="Close lightbox">&times;</button>
+  <div class="lb-img-wrap" id="lb-img-wrap">
+    <img id="lb-img" src="" alt="" width="1200" height="1600">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
 
 <!-- ===== SOCIAL PROOF ===== -->
 <section class="section" aria-labelledby="reviews-heading">
@@ -1517,43 +1707,90 @@
   </div>
 </footer>
 
-<!-- ===== SCROLL REVEAL SCRIPT ===== -->
+<!-- ===== SCRIPTS ===== -->
 <script>
 (function () {
   'use strict';
-  // Only run if user has not requested reduced motion
-  var mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
-  if (!mq.matches) return;
 
+  /* Header opacity toggle (always runs, no motion check needed) */
   var header = document.getElementById('site-header');
-  var lastY = 0;
+  var heroHeight = document.querySelector('.hero').offsetHeight;
 
-  window.addEventListener('scroll', function () {
-    var y = window.scrollY;
-    if (y > 60) {
-      header.classList.add('condensed');
+  function onScroll () {
+    if (window.scrollY > 60) {
+      header.classList.add('opaque');
     } else {
-      header.classList.remove('condensed');
+      header.classList.remove('opaque');
     }
-    lastY = y;
-  }, { passive: true });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run once on load
 
-  var els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(function (el) { el.classList.add('in'); });
-    return;
+  /* Scroll reveal (motion-safe) */
+  var mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (mq.matches) {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }
+  } else {
+    /* reduced-motion: show all reveals immediately */
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
 
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
+  /* Lightbox */
+  var lb        = document.getElementById('lightbox');
+  var lbImg     = document.getElementById('lb-img');
+  var lbCaption = document.getElementById('lb-caption');
+  var lbClose   = document.getElementById('lb-close');
+  var items     = document.querySelectorAll('.gallery-item');
+
+  function openLightbox (item) {
+    var img     = item.querySelector('img');
+    var caption = item.getAttribute('data-caption') || '';
+    lbImg.src         = img.src;
+    lbImg.alt         = img.alt;
+    lbCaption.textContent = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function closeLightbox () {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  items.forEach(function (item) {
+    item.addEventListener('click', function () { openLightbox(item); });
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(item);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  });
 
-  els.forEach(function (el) { io.observe(el); });
+  lbClose.addEventListener('click', closeLightbox);
+
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lb.classList.contains('active')) closeLightbox();
+  });
 }());
 </script>
 
