@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis by Janelle | Aesthetic Nurse Specialist | De Pere, WI</title>
+<meta name="description" content="Genesis by Janelle offers expert aesthetic nursing in De Pere, WI. Botox, Dysport, Juvederm, Sculptra, Kybella and more with CPSN and CANS certified nurse Janelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== TOKENS ===== */
+  :root {
+    --blush:      #f2ddd8;
+    --blush-mid:  #e8c9c1;
+    --blush-deep: #d4a89e;
+    --rose:       #b87168;
+    --rose-dark:  #8f4e45;
+    --gold-light: #f0ddb4;
+    --gold:       #c9a458;
+    --gold-dark:  #9a7838;
+    --ivory:      #faf7f2;
+    --ivory-mid:  #f2ede4;
+    --ivory-deep: #e8e0d2;
+    --ink:        #26181480;
+    --ink-1:      #261814;
+    --ink-2:      #3e2820;
+    --ink-3:      #5c3e34;
+    --ink-4:      #8c6b60;
+    --ink-5:      #b89e96;
+    --line:       #e8ddd4;
+    --white:      #ffffff;
+    --shadow-xs:  0 1px 3px rgba(38,24,20,.06);
+    --shadow-sm:  0 4px 16px rgba(38,24,20,.08);
+    --shadow-md:  0 8px 32px rgba(38,24,20,.12);
+    --shadow-lg:  0 20px 60px rgba(38,24,20,.16);
+  }
+
+  /* ===== RESET ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { cursor: pointer; border: none; background: none; font: inherit; }
+
+  /* ===== BASE ===== */
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 400;
+    background: var(--ivory);
+    color: var(--ink-1);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ===== SCROLL REVEAL (motion-safe) ===== */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.72s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.72s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.94);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .site-header.condensed {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    transition: padding 0.3s ease;
+  }
+
+  .site-header.condensed .header-inner {
+    padding: 12px 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blush) 0%, var(--gold-light) 100%);
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-xs);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .site-header.condensed .logo-mark {
+    transform: scale(0.88);
+  }
+
+  .logo-text-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink-1);
+    line-height: 1.1;
+  }
+
+  .logo-text-sub {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .primary-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .primary-nav a {
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    transition: color 0.18s ease;
+  }
+
+  .primary-nav a:hover { color: var(--rose-dark); }
+
+  .nav-cta {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--ink-1);
+    color: var(--ivory) !important;
+    border-radius: 3px;
+    font-size: 12.5px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    transition: background 0.2s ease !important;
+  }
+
+  .nav-cta:hover { background: var(--rose-dark) !important; color: var(--ivory) !important; }
+
+  @media (max-width: 800px) {
+    .primary-nav .hide-mobile { display: none; }
+    .primary-nav ul { gap: 20px; }
+  }
+
+  @media (max-width: 560px) {
+    .logo-text-sub { display: none; }
+    .primary-nav ul { gap: 14px; }
+    .nav-cta { padding: 8px 14px; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 0;
+    background:
+      radial-gradient(ellipse at 0% 0%, var(--blush) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, var(--gold-light) 0%, transparent 50%),
+      var(--ivory);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--rose-dark);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--rose-dark);
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 400;
+    line-height: 1.06;
+    color: var(--ink-1);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-body {
+    font-size: 16px;
+    color: var(--ink-3);
+    line-height: 1.8;
+    max-width: 440px;
+    margin-bottom: 44px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 16px 36px;
+    background: var(--ink-1);
+    color: var(--ivory);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 3px;
+    transition: background 0.22s ease, transform 0.22s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--rose-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .btn-ghost:hover { color: var(--rose-dark); border-color: var(--rose-dark); }
+
+  .hero-badges {
+    display: flex;
+    gap: 14px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-2);
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--ivory) 0%, transparent 15%);
+    pointer-events: none;
+  }
+
+  .hero-stat-pill {
+    position: absolute;
+    bottom: 48px;
+    left: 32px;
+    background: rgba(250,247,242,0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero-stat-pill .stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--ink-1);
+    line-height: 1;
+  }
+
+  .hero-stat-pill .stat-l {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-left {
+      padding: 72px 0 56px;
+      order: 2;
+    }
+    .hero-right {
+      order: 1;
+      height: 58vw;
+      max-height: 480px;
+    }
+    .hero-overlay {
+      background: linear-gradient(to bottom, transparent 70%, var(--ivory) 100%);
+    }
+    .hero-stat-pill { bottom: 20px; left: 20px; }
+  }
+
+  /* ===== TRUST STRIP ===== */
+  .trust-strip {
+    background: var(--ink-1);
+    padding: 18px 0;
+  }
+
+  .trust-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 24px;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    color: var(--ivory-mid);
+    text-align: center;
+  }
+
+  .trust-div {
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  /* ===== SECTION SKELETON ===== */
+  .section {
+    padding: 100px 0;
+  }
+
+  .section.alt {
+    background: var(--ivory-mid);
+  }
+
+  .section.rose-tint {
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 40%, var(--ivory-mid) 100%);
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--rose-dark);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .section-label::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--rose-dark);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.8vw, 52px);
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--ink-1);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--ink-3);
+    line-height: 1.8;
+    max-width: 640px;
+  }
+
+  .section-head {
+    margin-bottom: 64px;
+    max-width: 720px;
+  }
+
+  /* ===== SERVICES ===== */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 960px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+    transition: transform 0.26s ease, box-shadow 0.26s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  .service-img-wrap {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--blush);
+  }
+
+  .service-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .service-card:hover .service-img-wrap img {
+      transform: scale(1.04);
+    }
+  }
+
+  .service-body {
+    padding: 26px 24px 28px;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink-1);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--ink-3);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  .service-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--rose-dark);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== FOUNDER ===== */
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  @media (max-width: 1000px) {
+    .founder-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  .founder-img-wrap {
+    position: relative;
+  }
+
+  .founder-img-main {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4/5;
+  }
+
+  .founder-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .founder-img-secondary {
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    width: 200px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 3/4;
+  }
+
+  .founder-img-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  @media (max-width: 600px) {
+    .founder-img-secondary {
+      width: 140px;
+      bottom: -18px;
+      right: -12px;
+    }
+  }
+
+  .founder-body p {
+    font-size: 16px;
+    color: var(--ink-3);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  .founder-body p:last-child { margin-bottom: 0; }
+  .founder-body strong { color: var(--ink-1); font-weight: 600; }
+
+  .cred-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 28px 0;
+  }
+
+  .cred-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ink-2);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cred-pill svg { flex-shrink: 0; }
+
+  /* ===== BEFORE/AFTER GALLERY ===== */
+  .gallery-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 500px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
+  .gallery-item {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .gallery-item:hover img { transform: scale(1.04); }
+  }
+
+  .gallery-item-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(38,24,20,0.7) 0%, transparent 100%);
+    padding: 28px 16px 14px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  .disclaimer-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--ink-5);
+    line-height: 1.7;
+  }
+
+  /* ===== SOCIAL PROOF ===== */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 840px) {
+    .proof-grid { grid-template-columns: 1fr; }
+  }
+
+  .proof-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: var(--shadow-xs);
+    position: relative;
+  }
+
+  .proof-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--blush-deep);
+    line-height: 0.6;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .proof-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-2);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .proof-author {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .proof-author::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--blush-deep);
+  }
+
+  .star-row {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  .proof-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(90deg, var(--rose) 0%, var(--gold) 100%);
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  .nap-block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .nap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .nap-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--blush);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .nap-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-5);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .nap-value {
+    font-size: 15px;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+
+  .nap-value a {
+    color: var(--rose-dark);
+    font-weight: 500;
+  }
+
+  .nap-value a:hover { text-decoration: underline; }
+
+  .booking-card {
+    background: var(--ink-1);
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    color: var(--ivory);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .booking-card .bc-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .booking-card .bc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: var(--ivory);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .booking-card .bc-body {
+    font-size: 14px;
+    color: rgba(250,247,242,0.75);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  .btn-booking {
+    display: block;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%);
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    text-align: center;
+  }
+
+  .btn-booking:hover { opacity: 0.88; transform: translateY(-2px); }
+
+  .booking-card .bc-note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: rgba(250,247,242,0.45);
+  }
+
+  /* ===== FOOTER ===== */
+  .site-footer {
+    background: var(--ink-2);
+    color: var(--ivory-mid);
+    padding: 64px 0 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .footer-brand .fb-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ivory);
+    margin-bottom: 14px;
+  }
+
+  .footer-brand p {
+    font-size: 13.5px;
+    color: rgba(250,247,242,0.65);
+    line-height: 1.8;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: grid;
+    place-items: center;
+    transition: border-color 0.18s ease, background 0.18s ease;
+  }
+
+  .social-link:hover {
+    border-color: var(--gold);
+    background: rgba(201,164,88,0.12);
+  }
+
+  .footer-col h5 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col a {
+    font-size: 13.5px;
+    color: rgba(250,247,242,0.65);
+    transition: color 0.18s ease;
+  }
+
+  .footer-col a:hover { color: var(--ivory); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: rgba(250,247,242,0.38);
+  }
+
+  .footer-bottom a {
+    color: rgba(250,247,242,0.55);
+    transition: color 0.18s ease;
+  }
+
+  .footer-bottom a:hover { color: var(--gold-light); }
+
+  /* ===== UTILS ===== */
+  @media (max-width: 560px) {
+    .section { padding: 72px 0; }
+    .section-head { margin-bottom: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Genesis by Janelle home">
+        <div class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2C10 2 14 5 14 10C14 13.5 12.2 16 10 16C7.8 16 6 13.5 6 10C6 5 10 2 10 2Z" fill="#8f4e45" opacity="0.7"/>
+            <path d="M10 16C10 16 13 14.5 15 12C16.5 10 16.2 7.5 15 6.5" stroke="#c9a458" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div>
+          <div class="logo-text-main">Genesis by Janelle</div>
+          <div class="logo-text-sub">De Pere, Wisconsin</div>
+        </div>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li class="hide-mobile"><a href="#services">Services</a></li>
+          <li class="hide-mobile"><a href="#about">About</a></li>
+          <li class="hide-mobile"><a href="#contact">Contact</a></li>
+          <li><a href="https://fltvy.myaestheticrecord.com/online-booking" class="nav-cta" target="_blank" rel="noopener">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-left container" style="padding-right: 0;">
+    <div style="max-width: 520px;">
+      <div class="hero-eyebrow reveal">CPSN &amp; CANS Certified Aesthetic Nurse</div>
+      <h1 class="hero-h1 reveal reveal-delay-1">
+        Your results<br>
+        <em>in the hands</em><br>
+        of a nurse who<br>has done this for<br>19 years.
+      </h1>
+      <p class="hero-body reveal reveal-delay-2">
+        Every treatment at Genesis by Janelle is performed by Janelle herself, an Allergan-trained aesthetic nurse with dual board certifications and two decades of experience serving De Pere, Green Bay, and Greenville.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="https://fltvy.myaestheticrecord.com/online-booking" class="btn-primary" target="_blank" rel="noopener">Book a Consultation</a>
+        <a href="#services" class="btn-ghost">See Services</a>
+      </div>
+      <div class="hero-badges reveal reveal-delay-4">
+        <span class="badge"><span class="badge-dot"></span>CPSN Certified</span>
+        <span class="badge"><span class="badge-dot"></span>CANS Certified</span>
+        <span class="badge"><span class="badge-dot"></span>Allergan Trainer</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/474d8606-198e-4997-ac2a-aac80b017478/3F4A0301-2.jpg"
+      alt="Janelle, aesthetic nurse specialist, at Genesis by Janelle clinic in De Pere, WI"
+      width="900" height="1200"
+    >
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-stat-pill">
+      <div class="stat-n">19+</div>
+      <div class="stat-l">Years in aesthetic nursing</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="trust-strip" role="list" aria-label="Credentials and service area">
+  <div class="container trust-items">
+    <span role="listitem">Certified Plastic Surgery Nurse (CPSN)</span>
+    <span class="trust-div" aria-hidden="true">&#183;</span>
+    <span role="listitem">Certified Aesthetic Nurse Specialist (CANS)</span>
+    <span class="trust-div" aria-hidden="true">&#183;</span>
+    <span role="listitem">Allergan Medical Aesthetics Trainer</span>
+    <span class="trust-div" aria-hidden="true">&#183;</span>
+    <span role="listitem">Nurse of the Year 2009</span>
+    <span class="trust-div" aria-hidden="true">&#183;</span>
+    <span role="listitem">De Pere &middot; Green Bay &middot; Greenville</span>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Services</div>
+      <h2 class="section-title reveal reveal-delay-1" id="services-heading">
+        Treatments performed<br>by Janelle, every time.
+      </h2>
+      <p class="section-sub reveal reveal-delay-2">
+        From your first Botox appointment to a full collagen-restoration plan, you will always see the same nurse who knows your face, your goals, and your history.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <!-- Botox -->
+      <article class="service-card reveal">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/fb7ed586-679d-4d69-838a-342f017182a8/3F4A9535-2.jpg"
+            alt="Botox neurotoxin treatment at Genesis by Janelle"
+            loading="lazy" width="600" height="450"
+          >
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Botox</h3>
+          <p class="service-desc">Smooth frown lines, crow's feet, and forehead creases. Results appear within 24 to 48 hours and last three to four months. The most-requested treatment in the practice.</p>
+          <div class="service-price">$12 per unit</div>
+        </div>
+      </article>
+
+      <!-- Dysport -->
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/ca3a57bf-74b5-4ed5-bdbc-8f36e8526f6a/3F4A9410.jpg"
+            alt="Dysport injection treatment at Genesis by Janelle"
+            loading="lazy" width="600" height="450"
+          >
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Dysport</h3>
+          <p class="service-desc">A finely-targeted neurotoxin that reduces muscle activity between the brows. A lighter feel than Botox for some patients, with the same precision placement.</p>
+          <div class="service-price">$12 per unit</div>
+        </div>
+      </article>
+
+      <!-- Juvederm -->
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/abd9a4e3-5b44-4262-83ea-551ae3c5c67d/IMG_3143-3.jpg"
+            alt="Juvederm dermal filler treatment at Genesis by Janelle"
+            loading="lazy" width="600" height="450"
+          >
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Juvederm Fillers</h3>
+          <p class="service-desc">Hyaluronic acid filler that restores volume, softens deep creases, and defines contours. Juvederm can hold up to 1,000 times its weight in water for smooth, lasting results.</p>
+          <div class="service-price">Starting at $475</div>
+        </div>
+      </article>
+
+      <!-- Sculptra -->
+      <article class="service-card reveal">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/5ff39a53-39f0-4394-95bf-1b2935c088b9/IMG_4149_jpg.jpg"
+            alt="Sculptra collagen-stimulating treatment at Genesis by Janelle"
+            loading="lazy" width="600" height="450"
+          >
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Sculptra</h3>
+          <p class="service-desc">A bio-stimulator that rebuilds your own collagen gradually over two to three sessions. Results develop over months and can last up to two years. Janelle's preferred long-game treatment.</p>
+          <div class="service-price">From $750 per vial</div>
+        </div>
+      </article>
+
+      <!-- Kybella -->
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/7e7efac6-ab8d-4fd2-8d0a-d893ac74d751/3F4A8539+2.png"
+            alt="Kybella submental fat reduction at Genesis by Janelle"
+            loading="lazy" width="600" height="450"
+          >
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Kybella</h3>
+          <p class="service-desc">The only FDA-approved injectable that permanently destroys submental fat cells. A non-surgical solution for a defined jawline and reduced fullness under the chin.</p>
+          <div class="service-price">$450 per vial</div>
+        </div>
+      </article>
+
+      <!-- PRF + More -->
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/46f9453d-531d-42b8-825f-0392cb1aca7f/IMG_6767_jpg.png"
+            alt="Additional aesthetic services and treatments at Genesis by Janelle"
+            loading="lazy" width="600" height="450"
+          >
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">PRF, CoolSculpting &amp; More</h3>
+          <p class="service-desc">Undereye PRF uses your own platelet-rich fibrin for natural renewal. CoolSculpting contours the body without surgery. Spider vein injections and GLP-1 weight-loss coaching round out the menu.</p>
+          <div class="service-price">From $300 (consult required)</div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="https://fltvy.myaestheticrecord.com/online-booking" class="btn-primary" target="_blank" rel="noopener" style="display:inline-block;">
+        Book Your Consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDER ===== -->
+<section id="about" class="section alt" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-img-wrap reveal">
+        <div class="founder-img-main">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/d346425a-f049-4fbe-8867-f0401c1702aa/3F4A9482-2.jpg"
+            alt="Janelle, founder and lead aesthetic nurse at Genesis by Janelle"
+            loading="lazy" width="960" height="1200"
+          >
+        </div>
+        <div class="founder-img-secondary">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/dfd3a792-4569-4805-9f01-8a28902ec7da/3F4A9372.jpg"
+            alt="Janelle performing an aesthetic treatment at Genesis by Janelle"
+            loading="lazy" width="400" height="533"
+          >
+        </div>
+      </div>
+
+      <div class="founder-body">
+        <div class="section-label reveal">About Janelle</div>
+        <h2 class="section-title reveal reveal-delay-1" id="about-heading">
+          21 years as a nurse.<br>18 of them in aesthetics.
+        </h2>
+        <div class="cred-pills reveal reveal-delay-2">
+          <span class="cred-pill">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#8f4e45" stroke-width="1.5"/><path d="M4.5 7L6.5 9L9.5 5" stroke="#8f4e45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            CPSN
+          </span>
+          <span class="cred-pill">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#8f4e45" stroke-width="1.5"/><path d="M4.5 7L6.5 9L9.5 5" stroke="#8f4e45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            CANS
+          </span>
+          <span class="cred-pill">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#c9a458" stroke-width="1.5"/><path d="M4.5 7L6.5 9L9.5 5" stroke="#c9a458" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Allergan Medical Aesthetics Trainer
+          </span>
+          <span class="cred-pill">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#c9a458" stroke-width="1.5"/><path d="M4.5 7L6.5 9L9.5 5" stroke="#c9a458" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Nurse of the Year 2009
+          </span>
+          <span class="cred-pill">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#c9a458" stroke-width="1.5"/><path d="M4.5 7L6.5 9L9.5 5" stroke="#c9a458" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Registered Nurse, Wisconsin
+          </span>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <p>
+            When you come to Genesis by Janelle, you meet Janelle. Not a rotating schedule of providers. Not a med-school student doing a rotation. The same <strong>Certified Plastic Surgery Nurse and Certified Aesthetic Nurse Specialist</strong> who has been doing this work since before most medspas in the area existed.
+          </p>
+          <p>
+            Those two certifications, CPSN and CANS, are not the same thing. They are administered by separate bodies, require separate practice hours, and cover different scopes. Holding both is uncommon. Working at this level in a single independent suite, where every patient gets a full consultation with the practitioner whose name is on the door, is rarer still.
+          </p>
+          <p>
+            Janelle trained with Allergan, the maker of Botox and Juvederm, and has served as a trainer herself. In 2009 she was named <strong>Nurse of the Year</strong>. She is supported by a small, hand-selected team at 3852 Creamery Road in De Pere, including nurse practitioners and a licensed aesthetician with 17 years of experience.
+          </p>
+          <p>
+            If you have tried injections elsewhere and felt rushed, or if this is your first time considering aesthetics and you want to take it slowly, this is the right place.
+          </p>
+        </div>
+        <div style="margin-top: 32px;" class="reveal reveal-delay-4">
+          <a href="https://fltvy.myaestheticrecord.com/online-booking" class="btn-primary" target="_blank" rel="noopener">
+            Meet Janelle in Person
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section rose-tint" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="gallery-intro">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="section-label reveal">Work</div>
+        <h2 class="section-title reveal reveal-delay-1" id="gallery-heading">A look inside<br>the practice.</h2>
+      </div>
+      <p style="font-size:14px; color:var(--ink-4); max-width:280px; text-align:right;" class="reveal">Photos from Genesis by Janelle's clinical suite and team.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/5052d98c-8a8f-4513-b48d-8497e0bf4721/3F4A9346.jpg"
+          alt="Genesis by Janelle aesthetic clinic interior"
+          loading="lazy" width="600" height="800"
+        >
+        <div class="gallery-item-label">The Suite</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/9b55aa83-5765-4343-8fef-933503489535/3F4A9296.jpg"
+          alt="Janelle and her team at Genesis by Janelle"
+          loading="lazy" width="600" height="800"
+        >
+        <div class="gallery-item-label">The Team</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/2ae9f6fa-8569-47f8-8efc-0d18ba5025c6/3F4A9314.jpg"
+          alt="Treatment consultation at Genesis by Janelle"
+          loading="lazy" width="600" height="800"
+        >
+        <div class="gallery-item-label">Consultation</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-3">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/629a577af3547f7c5cdc3778/e945d7d9-a477-4169-b17b-a15803c9253c/3F4A9558.JPG"
+          alt="Janelle at work during an aesthetic treatment"
+          loading="lazy" width="600" height="800"
+        >
+        <div class="gallery-item-label">Precision</div>
+      </div>
+    </div>
+    <p class="disclaimer-note">Individual treatment results vary. Outcomes depend on individual anatomy, treatment type, and provider technique. Photos are for illustrative purposes only and do not constitute a guarantee of results.</p>
+  </div>
+</section>
+
+<!-- ===== SOCIAL PROOF ===== -->
+<section class="section" aria-labelledby="reviews-heading">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Patient Stories</div>
+      <h2 class="section-title reveal reveal-delay-1" id="reviews-heading">
+        What our patients say.
+      </h2>
+    </div>
+
+    <div class="proof-grid">
+      <article class="proof-card reveal">
+        <div class="star-row" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">Janelle takes her time with every appointment. She explained exactly what she was doing and why. I have been to other medspas and this is not the same experience at all.</p>
+        <div class="proof-author">Happy patient, De Pere</div>
+      </article>
+      <article class="proof-card reveal reveal-delay-1">
+        <div class="star-row" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">I was nervous about Sculptra because it is a bigger commitment. Janelle walked me through the whole plan before we started anything. I trusted her completely and the results came exactly as she described.</p>
+        <div class="proof-author">Sculptra patient, Green Bay</div>
+      </article>
+      <article class="proof-card reveal reveal-delay-2">
+        <div class="star-row" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#c9a458" aria-hidden="true"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">The fact that it is always Janelle doing the injections makes a real difference. You build up a relationship and she remembers what works for your face. That continuity is worth everything.</p>
+        <div class="proof-author">Long-term patient, Greenville</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section alt" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Visit Us</div>
+      <h2 class="section-title reveal reveal-delay-1" id="contact-heading">
+        Come see us in De Pere.
+      </h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Genesis by Janelle is located at 3852 Creamery Road in De Pere, Wisconsin. Call or book online to start with a consultation.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="nap-block">
+          <div class="nap-item reveal">
+            <div class="nap-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2C7.24 2 5 4.24 5 7C5 11 10 18 10 18C10 18 15 11 15 7C15 4.24 12.76 2 10 2ZM10 9C8.9 9 8 8.1 8 7C8 5.9 8.9 5 10 5C11.1 5 12 5.9 12 7C12 8.1 11.1 9 10 9Z" fill="#8f4e45"/>
+              </svg>
+            </div>
+            <div>
+              <div class="nap-label">Address</div>
+              <div class="nap-value">
+                3852 Creamery Road<br>
+                De Pere, WI 54115
+              </div>
+            </div>
+          </div>
+
+          <div class="nap-item reveal reveal-delay-1">
+            <div class="nap-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4C4 4 3 4 3 5C3 6 3 9.5 7 13.5C11 17.5 14.5 17 15.5 17C16.5 17 16.5 16 16.5 16L17.5 13C17.5 13 17.5 12 16.5 12L13.5 11C13.5 11 12.5 11 12 12L11.5 12.5C11.5 12.5 11 13 10 12.5C8.75 12 6 9.25 5.5 8C5 7 5.5 6.5 5.5 6.5L6 6C7 5.5 7 4.5 7 4.5L6 1.5C6 0.5 5 0.5 5 0.5L4 4Z" fill="#8f4e45" transform="translate(0,1)"/>
+              </svg>
+            </div>
+            <div>
+              <div class="nap-label">Phone</div>
+              <div class="nap-value">
+                <a href="tel:9206049414">920-604-9414</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nap-item reveal reveal-delay-2">
+            <div class="nap-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="5" width="16" height="12" rx="2" stroke="#8f4e45" stroke-width="1.5" fill="none"/>
+                <path d="M2 8L10 13L18 8" stroke="#8f4e45" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="nap-label">Social</div>
+              <div class="nap-value">
+                <a href="https://www.instagram.com/genesisbyjanelle" target="_blank" rel="noopener">@genesisbyjanelle</a> on Instagram
+              </div>
+            </div>
+          </div>
+
+          <div class="nap-item reveal reveal-delay-3">
+            <div class="nap-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="7.5" stroke="#8f4e45" stroke-width="1.5" fill="none"/>
+                <path d="M10 5.5V10L12.5 12.5" stroke="#8f4e45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="nap-label">Booking</div>
+              <div class="nap-value">
+                <a href="https://fltvy.myaestheticrecord.com/online-booking" target="_blank" rel="noopener">Book online anytime</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-card reveal reveal-delay-1">
+        <div class="bc-label">Ready to start?</div>
+        <div class="bc-title">Book your consultation with Janelle.</div>
+        <div class="bc-body">A no-pressure conversation about your goals, your face, and what is actually realistic. No commitment required at the first visit.</div>
+        <a href="https://fltvy.myaestheticrecord.com/online-booking" class="btn-booking" target="_blank" rel="noopener">
+          Book Online Now
+        </a>
+        <div class="bc-note">Or call 920-604-9414</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-name">Genesis by Janelle</div>
+        <p>Premier aesthetic nursing in De Pere, Wisconsin. CPSN and CANS certified. Independent, single-provider clinic. Serving De Pere, Green Bay, and Greenville since 2005.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/genesisbyjanelle" class="social-link" target="_blank" rel="noopener" aria-label="Genesis by Janelle on Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(250,247,242,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/genesisbyjanelle" class="social-link" target="_blank" rel="noopener" aria-label="Genesis by Janelle on Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(250,247,242,0.7)" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Botox</a></li>
+          <li><a href="#services">Dysport</a></li>
+          <li><a href="#services">Juvederm Fillers</a></li>
+          <li><a href="#services">Sculptra</a></li>
+          <li><a href="#services">Kybella</a></li>
+          <li><a href="#services">CoolSculpting</a></li>
+          <li><a href="#services">Undereye PRF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Visit</h5>
+        <ul>
+          <li><a href="https://fltvy.myaestheticrecord.com/online-booking" target="_blank" rel="noopener">Book Online</a></li>
+          <li><a href="https://app.squareup.com/gift/ML5Z0S771MB50/order" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="#about">About Janelle</a></li>
+          <li><a href="tel:9206049414">920-604-9414</a></li>
+          <li>3852 Creamery Road</li>
+          <li>De Pere, WI 54115</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>
+        <span style="color:rgba(250,247,242,0.25);">Treatment results vary by individual. Information on this site is not medical advice.</span>
+      </span>
+      <span>
+        Demo site prepared by <a href="https://andrei170.github.io/ag1/#services" target="_blank" rel="noopener">AG Consulting</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCROLL REVEAL SCRIPT ===== -->
+<script>
+(function () {
+  'use strict';
+  // Only run if user has not requested reduced motion
+  var mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (!mq.matches) return;
+
+  var header = document.getElementById('site-header');
+  var lastY = 0;
+
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (y > 60) {
+      header.classList.add('condensed');
+    } else {
+      header.classList.remove('condensed');
+    }
+    lastY = y;
+  }, { passive: true });
+
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  els.forEach(function (el) { io.observe(el); });
+}());
+</script>
+
+<!-- ===== SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://genesisbyjanelle.com/#janelle",
+      "name": "Janelle",
+      "jobTitle": "Aesthetic Nurse Specialist",
+      "worksFor": { "@id": "https://genesisbyjanelle.com/#business" },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certified Plastic Surgery Nurse",
+          "abbreviation": "CPSN",
+          "credentialCategory": "certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Plastic Surgical Nursing Certification Board"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certified Aesthetic Nurse Specialist",
+          "abbreviation": "CANS",
+          "credentialCategory": "certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Plastic Surgical Nursing Certification Board"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://genesisbyjanelle.com/#business",
+      "name": "Genesis by Janelle",
+      "url": "https://genesisbyjanelle.com/",
+      "telephone": "920-604-9414",
+      "medicalSpecialty": ["Dermatology", "PlasticSurgery"],
+      "employee": { "@id": "https://genesisbyjanelle.com/#janelle" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3852 Creamery Road",
+        "addressLocality": "De Pere",
+        "addressRegion": "WI",
+        "postalCode": "54115",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "De Pere", "addressRegion": "WI" },
+        { "@type": "City", "name": "Green Bay", "addressRegion": "WI" },
+        { "@type": "City", "name": "Greenville", "addressRegion": "WI" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/genesisbyjanelle",
+        "https://www.facebook.com/genesisbyjanelle"
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
